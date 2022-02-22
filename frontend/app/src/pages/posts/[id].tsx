@@ -53,7 +53,7 @@ export const getStaticPaths = async () => {
   const paths = await getAllPostIds()
   return {
     paths,
-    fallback: false,
+    fallback: true,
   }
 }
 
@@ -61,6 +61,6 @@ export async function getStaticProps(data: { params: any }) {
   const { params } = data
   const post = await getPostData(params.id)
   return {
-    props: post,
+    props: { post },
   }
 }

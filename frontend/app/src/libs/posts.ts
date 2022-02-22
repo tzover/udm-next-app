@@ -48,7 +48,7 @@ export async function getAllPostIds() {
 
 export async function getPostData(id: string) {
   try {
-    const res = await axios.get<FetchBlogInfo>(`${apiUrl}/${id}/`)
+    const res = await axios.get<FetchBlogInfo>(`${apiUrl}/${id}`)
     const post = res.data
 
     return post
